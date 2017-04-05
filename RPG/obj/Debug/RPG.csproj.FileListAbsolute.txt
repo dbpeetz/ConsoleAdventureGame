@@ -1,0 +1,6 @@
+C:\Users\BallerOnABudget\Documents\Visual Studio 2017\Projects\RPG\RPG\bin\Debug\RPG.exe.config
+C:\Users\BallerOnABudget\Documents\Visual Studio 2017\Projects\RPG\RPG\bin\Debug\RPG.exe
+C:\Users\BallerOnABudget\Documents\Visual Studio 2017\Projects\RPG\RPG\bin\Debug\RPG.pdb
+C:\Users\BallerOnABudget\Documents\Visual Studio 2017\Projects\RPG\RPG\obj\Debug\RPG.csprojResolveAssemblyReference.cache
+C:\Users\BallerOnABudget\Documents\Visual Studio 2017\Projects\RPG\RPG\obj\Debug\RPG.exe
+C:\Users\BallerOnABudget\Documents\Visual Studio 2017\Projects\RPG\RPG\obj\Debug\RPG.pdb

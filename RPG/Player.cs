@@ -6,53 +6,24 @@ using System.Threading.Tasks;
 
 namespace RPG
 {
-    public enum CharacterClass
-    {
-        Warrior = 0,
-        Hunter = 1,
-        Mage = 2
-
-    }
-
+ 
     class Player
     {
+        public Random rnd = new Random();
         public string PlayerName { get; set; }
-        public CharacterClass Class { get; set; }
         public int HP { get; set; }
 
-
-
-        public Player(string name, CharacterClass cs)
+        public void Attack(dynamic enemy, Dictionary<string, int> dict, Object PlayerName)
         {
-            this.PlayerName = name;
-            this.Class = cs;
+            var singleAttack = dict.ElementAt(rnd.Next(dict.Count));
+            int attackVal = singleAttack.Value;
+            string attackName = singleAttack.Key;
 
+            Console.WriteLine("You attack with {0} and deal {1} damage.", attackName, attackVal);
+
+            Console.WriteLine("{0} HP is at {1})", enemy.Name, enemy.PowerLevel);
+            enemy.HP -= attackVal;
         }
-
-        public CharacterClass ChooseClass(int t)
-        {
-            switch (t)
-            {
-                case 0:
-                    Console.WriteLine("You are a warrior.");
-                    return this.Class = CharacterClass.Warrior;
-
-                case 1:
-                    Console.WriteLine("You are a hunter");
-                    return this.Class = CharacterClass.Hunter;
-
-                case 2:
-                    Console.WriteLine("You are a mage.");
-                    return this.Class = CharacterClass.Mage;
-
-                default:
-                    Console.WriteLine("You did not select a class, you have been assigned warrior.");
-                    return this.Class = CharacterClass.Warrior;
-
-            }
-        }
-
-
 
     }
 }

@@ -10,14 +10,14 @@ namespace RPG
     {
         Dictionary<string, int> LevAttacks = new Dictionary<string, int>
         {
-            {"Wave Crash", 35 },
-            {"Hyper Beam", 55 },
-            {"Serpent Bind", 70 }
+            {"Wave Crash", 65 },
+            {"Hyper Beam", 80 },
+            {"Serpent Bind", 100 }
         };
 
         public Leviathan()
         {
-            this.PowerLevel = 225;
+            this.PowerLevel = 325;
             this.Name = "Leviathan";
         }
 
@@ -25,5 +25,6 @@ namespace RPG
         {
             Attack(p, LevAttacks, this.Name);
         }
+
     }
 }

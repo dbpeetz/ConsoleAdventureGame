@@ -13,11 +13,17 @@ namespace RPG
         public int PowerLevel { get; set; }
 
 
-        public void Attack(Player player, Dictionary<string, int> dict, Object enemyName)
+
+        public void Attack(dynamic player, Dictionary<string, int> dict, Object enemyName)
         {
             var singleAttack = dict.ElementAt(rnd.Next(dict.Count));
             int attackVal = singleAttack.Value;
             string attackName = singleAttack.Key;
+
+            Console.WriteLine("Enemy is attacking with {0} and deals {1} damage.", attackName, attackVal);
+
+            Console.WriteLine("{0} HP is at {1})", player.PlayerName, player.HP);
+            player.HP -= attackVal;
         }
 
     }

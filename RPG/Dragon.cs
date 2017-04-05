@@ -10,18 +10,18 @@ namespace RPG
     {
         Dictionary<string, int> DrgAttacks = new Dictionary<string, int>
        {
-           {"Fire Blast", 50 },
-           {"Tail Whip", 25 },
-           {"Omega Blast", 70 }
+           {"Fire Blast", 90 },
+           {"Wing Attack", 98 },
+           {"Omega Blast", 110 }
        };
 
         public Dragon()
         {
-            this.PowerLevel = 250;
+            this.PowerLevel = 275;
             this.Name = "Dragon";
         }
 
-        public void DragonAttack(Player p)
+        public void DragonAttack(dynamic p)
         {
             Attack(p, DrgAttacks, this.Name);
         }
