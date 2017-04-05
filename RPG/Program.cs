@@ -16,34 +16,183 @@ namespace RPG
         {
             Console.Title = "Castlemark Tower";
             int choice = 0;
-            Dragon drg = new Dragon();
-            Leviathan lev = new Leviathan();
+            int classChoice;
+            string playerName;
 
           do
             {
                 MainTitle();
                 Console.WriteLine();
+                playerName = NameMenu();
+                classChoice = ClassMenu();
                 choice = MainMenu();
 
-               if (choice == 1)
+
+
+               if (choice == 1 )
                {
-                    Console.WriteLine("You have encountered an Obsidian Drake");
-                   
-                    drg.DragonAttack(mage);
-                    Console.ReadLine();
-
-                }
-               if (choice == 2)
-                {
-                    Console.WriteLine("You have encountered a Leviathan");
-
+                    Dragon drg = new Dragon();
                     
-                    //lev.LeviathanAttack();
-                    Console.ReadLine();
-                }
-             
+                    if (classChoice == 1)
+                    {
+                        mage = new Mage(playerName);
+                        Console.WriteLine("You have encountered an Obsidian Drake");
+                        while (mage.HP >= 1 && drg.PowerLevel >= 1)
+                        {                          
+                            mage.MageAttack(drg);
+                            drg.DragonAttack(mage);
+                            if (mage.HP <= 0)
+                            {
+                                Console.WriteLine("You have been defeated.");
+                            }
+                            else if (drg.PowerLevel <= 0)
+                            {
+                                Console.WriteLine("Congratulations! You have defeated the dragon.");
+                                Console.ReadLine();
+                            }
 
-            } while (choice != 3);
+
+                        }
+
+                        Console.WriteLine("Game Over");
+                        Console.ReadLine();
+
+
+
+                    }
+                    if (classChoice == 2)
+                    {
+                        warrior = new Warrior(playerName);
+                        Console.WriteLine("You have encountered an Obsidian Drake");
+                        while (warrior.HP >= 1 && drg.PowerLevel >= 1)
+                        {
+                            warrior.WarAttack(drg);
+                            drg.DragonAttack(mage);
+                            if (mage.HP <= 0)
+                            {
+                                Console.WriteLine("You have been defeated.");
+                            }
+                            else if (drg.PowerLevel <= 0)
+                            {
+                                Console.WriteLine("Congratulations! You have defeated the dragon.");
+                                Console.ReadLine();
+                            }
+
+
+                        }
+
+                        Console.WriteLine("Game Over");
+                        Console.ReadLine();
+                    }
+                    if (classChoice == 3)
+                    {
+                        hunter = new Hunter(playerName);
+                        Console.WriteLine("You have encountered an Obsidian Drake");
+                        while (hunter.HP >= 1 && drg.PowerLevel >= 1)
+                        {
+                            hunter.HuntAttack(drg);
+                            drg.DragonAttack(mage);
+                            if (mage.HP <= 0)
+                            {
+                                Console.WriteLine("You have been defeated.");
+                            }
+                            else if (drg.PowerLevel <= 0)
+                            {
+                                Console.WriteLine("Congratulations! You have defeated the dragon.");
+                                Console.ReadLine();
+                            }
+
+
+                        }
+
+                        Console.WriteLine("Game Over");
+                        Console.ReadLine();
+                    }
+                }
+                if (choice == 2)
+                {
+                    Leviathan lev = new Leviathan();
+
+                    if (classChoice == 1)
+                    {
+                        mage = new Mage(playerName);
+                        Console.WriteLine("You have encountered a Leviathan");
+                        while (mage.HP >= 1 && lev.PowerLevel >= 1)
+                        {
+                            mage.MageAttack(lev);
+                            lev.LeviathanAttack(mage);
+                            if (mage.HP <= 0)
+                            {
+                                Console.WriteLine("You have been defeated.");
+                            }
+                            else if (lev.PowerLevel <= 0)
+                            {
+                                Console.WriteLine("Congratulations! You have defeated the Leviathan.");
+                                Console.ReadLine();
+                            }
+
+
+                        }
+
+                        Console.WriteLine("Game Over");
+                        Console.ReadLine();
+
+
+
+                    }
+                    if (classChoice == 2)
+                    {
+                        warrior = new Warrior(playerName);
+                        Console.WriteLine("You have encountered a Leviathan");
+                        while (warrior.HP >= 1 && lev.PowerLevel >= 1)
+                        {
+                            warrior.WarAttack(lev);
+                            lev.LeviathanAttack(mage);
+                            if (mage.HP <= 0)
+                            {
+                                Console.WriteLine("You have been defeated.");
+                            }
+                            else if (lev.PowerLevel <= 0)
+                            {
+                                Console.WriteLine("Congratulations! You have defeated the Leviathan.");
+                                Console.ReadLine();
+                            }
+
+
+                        }
+
+                        Console.WriteLine("Game Over");
+                        Console.ReadLine();
+                    }
+                    if (classChoice == 3)
+                    {
+                        hunter = new Hunter(playerName);
+                        Console.WriteLine("You have encountered a Leviathan");
+                        while (hunter.HP >= 1 && lev.PowerLevel >= 1)
+                        {
+                            hunter.HuntAttack(lev);
+                            lev.LeviathanAttack(mage);
+                            if (mage.HP <= 0)
+                            {
+                                Console.WriteLine("You have been defeated.");
+                            }
+                            else if (lev.PowerLevel <= 0)
+                            {
+                                Console.WriteLine("Congratulations! You have defeated the Leviathan.");
+                                Console.ReadLine();
+                            }
+
+
+                        }
+
+                        Console.WriteLine("Game Over");
+                        Console.ReadLine();
+
+                    }
+                }
+
+
+                } while (choice != 3);
 
  
 
@@ -76,30 +225,7 @@ namespace RPG
         }
         private static int MainMenu()
         {
-            int choice;
-            int classChoice;
-            string playerName;
-            Console.WriteLine("Welcome to Castlemark Tower\n");
-            Console.WriteLine("What is your name?");
-            playerName = Console.ReadLine();
-            Console.WriteLine("Please choose a class");
-            Console.WriteLine("1:Mage");
-            Console.WriteLine("2:Warrior");
-            Console.WriteLine("3:Hunter");
-            Console.WriteLine("*********************");
-            classChoice = Int32.Parse(Console.ReadLine());
-            if(classChoice == 1)
-            {
-                 mage = new Mage(playerName);
-            }
-            else if (classChoice == 2)
-            {
-                 warrior = new Warrior(playerName);
-            }
-            else if (classChoice == 3)
-            {
-                hunter = new Hunter(playerName);
-            }
+            int choice;           
             Console.ForegroundColor = ConsoleColor.DarkYellow;
 
 
@@ -114,7 +240,29 @@ namespace RPG
 
             choice = Int32.Parse(Console.ReadLine());
             return choice;
+           
 
+        }
+
+        private static int ClassMenu()
+        {
+            int classChoice;
+            Console.WriteLine("Please choose a class");
+            Console.WriteLine("1:Mage");
+            Console.WriteLine("2:Warrior");
+            Console.WriteLine("3:Hunter");
+            Console.WriteLine("*********************");
+            classChoice = Int32.Parse(Console.ReadLine());
+            return classChoice;
+        }
+
+        private static string NameMenu()
+        {
+            string playerName;
+            Console.WriteLine("Welcome to Castlemark Tower\n");
+            Console.WriteLine("What is your name?");
+            playerName = Console.ReadLine();
+            return playerName;
         }
     }
 }

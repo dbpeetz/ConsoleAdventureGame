@@ -21,8 +21,9 @@ namespace RPG
 
             Console.WriteLine("You attack with {0} and deal {1} damage.", attackName, attackVal);
 
-            Console.WriteLine("{0} HP is at {1})", enemy.Name, enemy.PowerLevel);
-            enemy.HP -= attackVal;
+            enemy.PowerLevel -= attackVal;
+            Console.WriteLine("{0} HP is at {1}", enemy.Name, enemy.PowerLevel);
+            
         }
 
     }
