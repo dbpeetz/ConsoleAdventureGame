@@ -67,8 +67,8 @@ namespace RPG
                         while (warrior.HP >= 1 && drg.PowerLevel >= 1)
                         {
                             warrior.WarAttack(drg);
-                            drg.DragonAttack(mage);
-                            if (mage.HP <= 0)
+                            drg.DragonAttack(warrior);
+                            if (warrior.HP <= 0)
                             {
                                 Console.WriteLine("You have been defeated.");
                             }
@@ -91,8 +91,8 @@ namespace RPG
                         while (hunter.HP >= 1 && drg.PowerLevel >= 1)
                         {
                             hunter.HuntAttack(drg);
-                            drg.DragonAttack(mage);
-                            if (mage.HP <= 0)
+                            drg.DragonAttack(hunter);
+                            if (hunter.HP <= 0)
                             {
                                 Console.WriteLine("You have been defeated.");
                             }
@@ -147,8 +147,8 @@ namespace RPG
                         while (warrior.HP >= 1 && lev.PowerLevel >= 1)
                         {
                             warrior.WarAttack(lev);
-                            lev.LeviathanAttack(mage);
-                            if (mage.HP <= 0)
+                            lev.LeviathanAttack(warrior);
+                            if (warrior.HP <= 0)
                             {
                                 Console.WriteLine("You have been defeated.");
                             }
@@ -171,8 +171,8 @@ namespace RPG
                         while (hunter.HP >= 1 && lev.PowerLevel >= 1)
                         {
                             hunter.HuntAttack(lev);
-                            lev.LeviathanAttack(mage);
-                            if (mage.HP <= 0)
+                            lev.LeviathanAttack(hunter);
+                            if (hunter.HP <= 0)
                             {
                                 Console.WriteLine("You have been defeated.");
                             }

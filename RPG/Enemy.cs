@@ -21,7 +21,7 @@ namespace RPG
             string attackName = singleAttack.Key;
 
             Console.WriteLine("Enemy is attacking with {0} and deals {1} damage.", attackName, attackVal);
-
+            Console.WriteLine("");
             player.HP -= attackVal;
 
             Console.WriteLine("{0}'s HP is at {1}", player.PlayerName, player.HP);
